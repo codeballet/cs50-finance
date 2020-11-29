@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Symbol</th>
+                <th scope="col">Action</th>
+                <th scope="col">Price</th>
+                <th scope="col">Shares</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order["date"] }}</td>
+                    <td>{{ order["symbol"] }}</td>
+                    <td>{{ order["action"] }}</td>
+                    <td>{{ order["price"] }}</td>
+                    <td>{{ order["shares"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
